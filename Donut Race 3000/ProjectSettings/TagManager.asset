@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FlaqueCaramel
+  - FlaqueChocolat
+  - Jump
+  - UpSpeed
+  - Obstacle
   layers:
   - Default
   - TransparentFX

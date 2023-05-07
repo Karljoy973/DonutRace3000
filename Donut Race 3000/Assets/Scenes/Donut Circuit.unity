@@ -175,7 +175,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 53.072792
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -200,14 +200,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718553409}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.8479077, z: -0, w: 0.5301438}
+  m_LocalPosition: {x: -78, y: 504, z: 1212}
+  m_LocalScale: {x: 0.97348, y: 0.97348, z: 0.97348}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -115.97, z: 0}
 --- !u!114 &718553413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,14 +575,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.949681
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 9b882955b142f084cbe20df1d8604b5f,
-        type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_CookingOptions
-      value: -1
+    - target: {fileID: 8054213106603512749, guid: a5bba51f853e3fc4e98e39335f3617be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.76
       objectReference: {fileID: 0}
     - target: {fileID: 8803672675225979366, guid: a5bba51f853e3fc4e98e39335f3617be,
         type: 3}

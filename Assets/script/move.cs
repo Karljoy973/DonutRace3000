@@ -14,13 +14,23 @@ public class move : MonoBehaviour
     public GameObject highOnVisual;
     public GameObject highOffVisual;
     public AudioSource audio;
+    float normal_speed;
     
     
    
     // Start is called before the first frame update
     void Start()
     {
-        
+        normal_speed = VitesseCourse;
+    }
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log(other);
+        if(other.gameObject.CompareTag("FlaqueChocolat")){
+            Debug.Log("I am triggered I am chocolat !");
+            VitesseCourse *= 0.35f;
+            Debug.Log(VitesseCourse);
+        }
+        if(other.gameObject.CompareTag("FlaqueCaramel") ) VitesseCourse *= 0.35f;
     }
 
     // Update is called once per frame

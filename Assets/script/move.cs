@@ -5,10 +5,15 @@ using UnityEngine;
 public class move : MonoBehaviour
 {
     
-    public float VitesseMarche = 10f;
-    public float VitesseCourse = 16f;
-    public float vitesseRotate = 60f;
+    public float VitesseMarche = 100f;
+    public float VitesseCourse = 200f;
+    public float vitesseRotate = 50f;
     public int CoefRot = 180;
+    public AudioClip pickaxeSound;
+    public AudioClip axeSound;
+    public GameObject highOnVisual;
+    public GameObject highOffVisual;
+    public AudioSource audio;
     
     
    
@@ -22,25 +27,21 @@ public class move : MonoBehaviour
     void Update()
     {
        
-       float pitch = 1f;
-        GetComponent<AudioSource>().pitch = pitch;
+    
+       
 
 
         if(Input.GetAxis("Vertical")>0 && Input.GetAxis("Horizontal") < 0)
         {
             transform.Rotate(0, -vitesseRotate * Time.deltaTime, 0);
-            while(pitch < 10f){
-                pitch += 1f;
-            }
+            highOnVisual.SetActive(true);
             
         }
 
          if(Input.GetAxis("Vertical")>0 && Input.GetAxis("Horizontal") > 0)
         {
             transform.Rotate(0, vitesseRotate * Time.deltaTime, 0);
-            while(pitch < 10f){
-                pitch += 1f;
-            }
+           highOnVisual.SetActive(true);
             
         }
         
@@ -48,36 +49,33 @@ public class move : MonoBehaviour
         if(Input.GetAxis("Vertical")>0 && !Input.GetKey(KeyCode.LeftControl))
         {
             transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * VitesseMarche * Time.deltaTime);
-            while(pitch < 20f){
-                pitch += 1f;
-            }
+            highOnVisual.SetActive(true);
+            
+        }else{
+            highOnVisual.SetActive(false);
         }
         
         if(Input.GetAxis("Vertical")>0 && Input.GetKey(KeyCode.LeftControl))
         {
             transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * VitesseCourse * Time.deltaTime);
-            while(pitch < 30f){
-                pitch += 1f;
-            }
+           highOnVisual.SetActive(true);
         }
        
 
         if(Input.GetAxis("Vertical")<0)
         {
             transform.Translate(Vector3.forward * Input.GetAxis("Vertical") * VitesseMarche * Time.deltaTime);
-            while(pitch < 5f){
-                pitch += 1f;
-            }
+           
         }
 
           if(Input.GetAxis("Vertical")<0 && Input.GetAxis("Horizontal") != 0)
         {
             transform.Rotate(-Vector3.up * Input.GetAxis("Horizontal") * CoefRot * Time.deltaTime);
-             while(pitch < 5f){
-                pitch += 1f;
-            }
+            highOnVisual.SetActive(true);
 
             
+        }else{
+            highOnVisual.SetActive(false);
         }
        
        

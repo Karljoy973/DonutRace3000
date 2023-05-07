@@ -5,11 +5,15 @@ public class PathManager : MonoBehaviour
 {
     private GameObject[] pathObjects;
     private Vector3[] pathPositions;
-    float time = 5f;
+    float time;
+    float normal_speed;
     private int currentIndex = 0;
+    [SerializeField]
+    float speed;
 
     void Start()
     {
+        normal_speed = speed;
         // Find all objects in the scene with the "Path" tag
         pathObjects = GameObject.FindGameObjectsWithTag("Path");
 
@@ -21,13 +25,27 @@ public class PathManager : MonoBehaviour
         {
             pathPositions[i] = pathObjects[i].transform.position;
         }
-
+    time = pathPositions.Length/speed;
         LeanTween.moveSpline ( gameObject, pathPositions,  time);
 
     }
 
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log(other);
+        if(other.gameObject.CompareTag("FlaqueChocolat")){
+            Debug.Log("I am triggered I am chocolat !");
+            speed *= 0.85f;
+            Debug.Log(speed);
+        }
+        if(other.gameObject.layer.Equals("") ) speed *= 0.65f;
+        if(other.gameObject.CompareTag("Normal_speed")) speed = normal_speed;
+    }
     void Update()
     {
-    
+        if(speed <normal_speed) {
+            speed *= 1.02f;
+            Debug.Log(speed);
+        }
+        else speed = normal_speed;
     }
 }

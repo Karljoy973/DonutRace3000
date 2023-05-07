@@ -9,6 +9,7 @@ TagManager:
   - Jump
   - UpSpeed
   - Obstacle
+  - Path
   layers:
   - Default
   - TransparentFX
